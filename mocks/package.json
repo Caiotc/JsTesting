@@ -2,9 +2,9 @@
   "name": "mocks-study",
   "version": "1.0.0",
   "description": "Exploratory repo",
-  "main": "index.js",
+  "main": "index.test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test":"node index.test.js"
   },
   "repository": {
     "type": "git",
