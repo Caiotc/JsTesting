@@ -19,4 +19,37 @@ const assert = require('node:assert')
     await assert.rejects(result,expected);
 }
 
+{
+    const filePath = './mock/fiveItems-invalid.csv'
+    const expected = new Error(error.FILE_LENGTH_ERROR_MESSAGE)
+    const result = File.csvToJson(filePath);
+    await assert.rejects(result,expected);
+}
+
+{
+    const filePath = './mock/threeItems-valid.csv'
+    const expected = [
+        {
+            id:1,
+            name:'xuxa da silva',
+            profession:'developer',
+            age:120
+        },
+        {
+            id:2,
+            name:'ze calunga',
+            profession:'developer',
+            age:20
+        },
+        {
+            id:3,
+            name:'creusa',
+            profession:'rh',
+            age:50
+        }
+    ]
+    const result = await File.csvToJson(filePath);
+     assert.deepEqual(result,expected);
+}
+
 })();
